@@ -5,10 +5,36 @@
  */
 package ca.sheridancollege.project;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Redbark
  */
-public class DealCards {
+public class DealCards extends GroupOfCards {
+      private int handSize = 4;
+      Card[] cards = new Card[handSize];
     
-}
+    DealCards(int size){
+    super(size);
+    }
+    
+   
+        public void dealHand()
+        {
+                int countCards = 0;
+        for(Card.Suit s: Card.Suit.values())
+                {
+                    for(Card.Value v: Card.Value.values())
+                    {
+                         cards[countCards] = (new Card(s,v));
+                         countCards++;
+                        
+                    }
+                }//end outter for
+        }//end method
+
+    }
+    
+    
+
