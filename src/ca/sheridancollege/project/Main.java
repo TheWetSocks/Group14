@@ -20,5 +20,15 @@ public class Main {
         
         System.out.println("Welcome to: " + g.getGameName());
         System.out.println("Players in the game: " + p1.getPlayers());
+        
+                GroupOfCards ch = new GroupOfCards();
+                ch.generateHand();
+                for(Card c: ch.cards)
+                {
+                    System.out.println(c.getValue());
+                }
     }
 }
+     enum cardType {
+        TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE;
+    }

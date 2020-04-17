@@ -17,6 +17,9 @@ public class Player
     private String playerName;
     public static ArrayList<String> playerList = new ArrayList<String>();
     
+    public Player(){
+    }
+    
     public Player(String playerName){
         this.playerName = playerName;
         numberOfPlayers++;
@@ -34,6 +37,10 @@ public class Player
         else{
             System.out.println("Invalid amount of players. Try entering them again!");
         }
+        return handSize;
+    }
+    
+    public int getHandSize(){
         return handSize;
     }
     
