@@ -4,45 +4,44 @@
  * Add your name as a modifier and the date!
  */
 package ca.sheridancollege.project;
+import java.util.ArrayList;
 
 /**
  * A class that models each Player in the game. Players have an identifier, which should be unique.
  * @author dancye
  */
-public abstract class Player 
+public class Player 
 {
-    private String playerID; //the unique ID for this player
+    private int numberOfPlayers;
+    private int handSize;
+    private String playerName;
+    public static ArrayList<String> playerList = new ArrayList<String>();
     
-    /**
-     * A constructor that allows you to set the player's unique ID
-     * @param name the unique ID to assign to this player.
-     */
-    public Player(String name)
-    {
-        playerID= name;
+    public Player(String playerName){
+        this.playerName = playerName;
+        numberOfPlayers++;
+        playerList.add(playerName);
     }
     
-    /**
-     * @return the playerID
-     */
-    public String getPlayerID() 
-    {
-        return playerID;
-    }
-
-    /**
-     * Ensure that the playerID is unique
-     * @param givenID the playerID to set
-     */
-    public void setPlayerID(String givenID) 
-    {
-        playerID = givenID;
+    private int handSize(){
+        if(numberOfPlayers == 2){
+            handSize = 7;
+        }
+        else if(numberOfPlayers < 4)
+        {
+            handSize = 5;
+        }
+        else{
+            System.out.println("Invalid amount of players. Try entering them again!");
+        }
+        return handSize;
     }
     
-    /**
-     * The method to be instantiated when you subclass the Player class
-     * with your specific type of Player and filled in with logic to play your game.
-     */
-    public abstract void play();
+    public String getPlayers(){
+        return playerList.toString();
+    }
     
+    public String getName(){
+        return playerName;
+    }
 }
