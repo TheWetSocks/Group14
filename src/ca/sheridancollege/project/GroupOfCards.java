@@ -23,7 +23,7 @@ public class GroupOfCards {
     private ArrayList<Card> deck = new ArrayList<Card>(52);
     private ArrayList<Card> hand = new ArrayList<Card>();
     Player p = new Player();
-    private int handSize = 7;
+    private int handSize = p.getHandSize();
 
     private int deckSize = 52;
     public Card[] cards = new Card[deckSize];
@@ -42,6 +42,7 @@ public class GroupOfCards {
     public void dealHand() {
         int countCards = 0;
         Random rnd = new Random();
+        p.getNumberOfPlayers();
         if (p.getHandSize() == 2) {
             int randomNum = rnd.nextInt(50);
             for (int i = 0; i < 7; i++) {
@@ -49,13 +50,14 @@ public class GroupOfCards {
                 deck.remove(i);
                 randomNum = 0;
             }
-        } else if (p.getHandSize() < 7) {
-            for (int i = 0; i < 7; i++) {
+        } else if (p.getNumberOfPlayers() == 1) {
+            for (int i = 0; i < 4; i++) {
                 int randomNum = rnd.nextInt(50);
                 handCards[i] = cards[randomNum];
                 randomNum = 0;
             }
         }
+        System.out.println("Size of hand: " + handCards.length);
     }
 
     public void getHand() {

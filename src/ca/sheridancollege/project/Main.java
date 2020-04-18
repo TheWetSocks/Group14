@@ -15,20 +15,15 @@ public class Main {
     public static void main(String[] args){
         GroupOfCards deck = new GroupOfCards();
         
-        Player p1 = new Player("Max");
+        Player p = new Player("Max");
         Game g = new Game();
         
         System.out.println("Welcome to: " + g.getGameName());
-        System.out.println("Players in the game: " + p1.getPlayers());
+        System.out.println("Players in the game: " + p.getPlayers());
+        deck.generateHand();
+        deck.dealHand();
+        deck.getHand();
+        p.getNumberOfPlayers();
         
-                GroupOfCards ch = new GroupOfCards();
-                ch.generateHand();
-                for(Card c: ch.cards)
-                {
-                    System.out.println(c.getValue());
-                }
     }
 }
-     enum cardType {
-        TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE;
-    }

@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class Player 
 {
-    private int numberOfPlayers;
+    private static int numberOfPlayers;
     private int handSize;
     private String playerName;
     public static ArrayList<String> playerList = new ArrayList<String>();
@@ -27,7 +27,7 @@ public class Player
     }
     
     private int handSize(){
-        if(numberOfPlayers == 2){
+        if(numberOfPlayers == 2 || numberOfPlayers == 1){
             handSize = 7;
         }
         else if(numberOfPlayers < 4)
@@ -46,6 +46,11 @@ public class Player
     
     public String getPlayers(){
         return playerList.toString();
+    }
+    
+    public int getNumberOfPlayers(){
+        System.out.println("Num of players:" + numberOfPlayers);
+        return numberOfPlayers;
     }
     
     public String getName(){
