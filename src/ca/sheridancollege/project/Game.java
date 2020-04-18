@@ -57,7 +57,7 @@ public class Game
      * Play the game. This might be one method or many method calls depending
      * on your game.
      */
-    public  void startGame(){
+    public  int startGame(){
         
         Scanner input = new Scanner(System.in);
         System.out.println("You are playing " + gameName);
@@ -73,6 +73,7 @@ public class Game
         
         System.out.println("Start Game");
         
+        return numberOfPlayers;
     }
     
     /**
