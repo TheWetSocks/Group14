@@ -21,21 +21,46 @@ import java.util.Scanner;
 public class GroupOfCards {
 
     private ArrayList<Card> deck = new ArrayList<Card>(52);
+    private ArrayList<Card> hand = new ArrayList<Card>();
     Player p = new Player();
-    
-    private int handSize = 52;
-    public Card[] cards = new Card[handSize];
-    
-            public void generateHand()
-        {
-                int countCards = 0;
-                for(int i = 0; i < 4; i++){
-                    for(Card.Value v: Card.Value.values())
-                    {
-                        cards[countCards] = (new Card(v));
-                        countCards++;
-                    }
-                }//end outter for
-        }//end method
+    private int handSize = 7;
 
+    private int deckSize = 52;
+    public Card[] cards = new Card[deckSize];
+    public Card[] handCards = new Card[handSize];
+
+    public void generateHand() {
+        int countCards = 0;
+        for (int i = 0; i < 4; i++) {
+            for (Card.Value v : Card.Value.values()) {
+                cards[countCards] = (new Card(v));
+                countCards++;
+            }
+        }//end outter for
+    }//end method
+
+    public void dealHand() {
+        int countCards = 0;
+        Random rnd = new Random();
+        if (p.getHandSize() == 2) {
+            int randomNum = rnd.nextInt(50);
+            for (int i = 0; i < 7; i++) {
+                handCards[i] = cards[randomNum];
+                deck.remove(i);
+                randomNum = 0;
+            }
+        } else if (p.getHandSize() < 7) {
+            for (int i = 0; i < 7; i++) {
+                int randomNum = rnd.nextInt(50);
+                handCards[i] = cards[randomNum];
+                randomNum = 0;
+            }
+        }
+    }
+
+    public void getHand() {
+        for (int i = 0; i < handCards.length; i++) {
+            System.out.println(handCards[i].getValue());
+        }
+    }
 }//end class
