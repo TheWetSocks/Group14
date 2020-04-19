@@ -19,17 +19,33 @@ public class Card
      * Students should implement this method for their specific children classes 
      * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
      */
-    public enum Suit {HEARTS, CLUBS,SPADES,DIAMONDS};
+        public enum Suit {HEARTS, CLUBS,SPADES,DIAMONDS};
         public enum Value{ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING};
         private final Suit suit;
         private final Value value;
+        
+        
 
-        public Card(Suit s, Value gVal)
+        public Card(int s, int gVal)
         {
-           suit =s;
-           value= gVal;
+           
+           suit =Suit.values()[s];
+           value= Value.values()[gVal];
+           
+           
         }
+        
+        public Card(Suit s)
+        {
+           
+           suit = s;
+           value= null;
+           
+           
+        }
+        
     public Value getValue() {
+        
         return this.value;
     }
 

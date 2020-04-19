@@ -37,7 +37,7 @@ public class Game
      /**
      * @return the players of this game
      */
-    public ArrayList <Player> getPlayers(String nameOfPlayer) 
+    public ArrayList <Player> getPlayers() 
     {
         //Player player = new Player(nameOfPlayer);
         //players.add();
@@ -57,7 +57,7 @@ public class Game
      * Play the game. This might be one method or many method calls depending
      * on your game.
      */
-    public  void startGame(){
+    public  int startGame(){
         
         Scanner input = new Scanner(System.in);
         System.out.println("You are playing " + gameName);
@@ -66,13 +66,14 @@ public class Game
         
                 for(int i=0;i < numberOfPlayers;i++){
                     System.out.println("Please name of player " + (i + 1) + ": ");           
-                    Player player = new Player(input.next());
+                     players.add(new Player(input.next()));
                 }
             
         
         
         System.out.println("Start Game");
         
+        return numberOfPlayers;
     }
     
     /**

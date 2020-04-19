@@ -18,8 +18,8 @@ public class GroupOfCards
 {
    
     //The group of cards, stored in an ArrayList
-    private ArrayList <Card> cards;
-    private int size;//the size of the grouping
+    protected ArrayList <Card> cards = new ArrayList<Card>();
+    protected int size;//the size of the grouping
     
     public GroupOfCards(int givenSize)
     {
@@ -35,10 +35,10 @@ public class GroupOfCards
         return cards;
     }
     
-    public void shuffle()
+    /*public void shuffle()
     {
         Collections.shuffle(cards);
-    }
+    }*/
 
     /**
      * @return the size of the group of cards
