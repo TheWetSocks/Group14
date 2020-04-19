@@ -37,7 +37,7 @@ public class Game
      /**
      * @return the players of this game
      */
-    public ArrayList <Player> getPlayers(String nameOfPlayer) 
+    public ArrayList <Player> getPlayers() 
     {
         //Player player = new Player(nameOfPlayer);
         //players.add();
@@ -66,7 +66,7 @@ public class Game
         
                 for(int i=0;i < numberOfPlayers;i++){
                     System.out.println("Please name of player " + (i + 1) + ": ");           
-                    Player player = new Player(input.next());
+                     players.add(new Player(input.next()));
                 }
             
         

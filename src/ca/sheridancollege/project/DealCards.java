@@ -51,6 +51,23 @@ public class DealCards extends GroupOfCards {
                
             return cards;
     }
+        
+        public void addNewHand(ArrayList<Card> newHand){
+            
+            cards = newHand;
+        }
+        
+        public void realPlayerCheck(String card){
+            
+            for(int i  =0; i < cards.size();i++){
+                if(card.toUpperCase() == "TWO"){
+                    cards.indexOf(i);
+                }
+            
+            }
+        
+    }
+        
 }
     
     

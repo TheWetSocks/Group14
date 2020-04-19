@@ -20,7 +20,10 @@ public class Player
     {
         return playerID;
     }
-
+    
+    public int getBooks(){
+    return booksCollected;
+    }
    
     public void setPlayerID(String givenID) 
     {
@@ -68,6 +71,8 @@ public class Player
         
         return cards;
     }
+    
+    
   
     private void goFish(){
          int randS = 0 + (int)(Math.random()*((3 - 0) + 1 ));
@@ -78,5 +83,7 @@ public class Player
     
     
     public void play(){}
+    
+    
 
 }
