@@ -34,6 +34,16 @@ public class Card
            
            
         }
+        
+        public Card(Suit s)
+        {
+           
+           suit = s;
+           value= null;
+           
+           
+        }
+        
     public Value getValue() {
         
         return this.value;

@@ -26,22 +26,25 @@ public class DealCards extends GroupOfCards {
         {
             int randS = 0 + (int)(Math.random()*((3 - 0) + 1 ));
             int randV = 0 + (int)(Math.random()*((12 - 0) + 1 ));
-            Card[] cardHand = new Card[size];
-            
+            //Card[] cardHand = new Card[size];
+            //ArrayList<Card> cardHand = new ArrayList<Card>();
             for(int i = 0;i < size;i++){
                 randS = 0 + (int)(Math.random()*((3 - 0) + 1 ));
                 randV = 0 + (int)(Math.random()*((12 - 0) + 1 ));
                  System.out.println(randV + " "+ randS);
-                cardHand[i] = new Card(randS,randV);
-                cards.add(cardHand[i]);
+                //cardHand[i] = new Card(randS,randV);
+                cards.add(new Card(randS,randV));
                 
                
             
             }
             
             for(int i = 0;i<size;i++){
-                System.out.println(cardHand[i].getSuit());
-                 System.out.println(cardHand[i].getValue());
+               // System.out.println(cardHand[i].getSuit());
+               //  System.out.println(cardHand[i].getValue());
+                 //System.out.println(cards.get(i));
+                System.out.println(cards.get(i).getSuit());
+                 cards.get(i).getValue();
             }
            // cardHand[1].getSuit();
             
@@ -57,15 +60,32 @@ public class DealCards extends GroupOfCards {
             cards = newHand;
         }
         
-        public void realPlayerCheck(String card){
+        public void addNewCard(Card newCard){
+            cards.add(newCard);
+        }
+        
+        public ArrayList<Card> showHand(){
+            //for(int i = 0; i <cards.size();i++){
+            //cards.get(i);
+           // }
+            
+            return cards;
+        }
+        
+          
+        
+        public Card realPlayerCheck(String card){
+            Card cardTaken = null;
             
             for(int i  =0; i < cards.size();i++){
-                if(card.toUpperCase() == "TWO"){
-                    cards.indexOf(i);
+                if(card.equals(cards.get(i).getValue())){
+                    
+                   cardTaken = new Card(cards.get(i).getSuit());
                 }
             
             }
-        
+            
+            return cardTaken;
     }
         
 }
