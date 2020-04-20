@@ -59,8 +59,10 @@ public class Player
                
            }
            
-            if(cardCount == 4)
+            if(cardCount == 4){
                      booksCollected+= 1;
+                     System.out.println(playerID + ",you have " + booksCollected + " books ");
+            }
          
            
        }
