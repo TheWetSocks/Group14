@@ -9,6 +9,7 @@ import java.util.ArrayList;
  */
 public class Player {
 
+    
     /*
     playerID: the unique ID for this player
     booksCollected: the numbers of books the player has collected
