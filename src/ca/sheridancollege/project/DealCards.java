@@ -24,6 +24,7 @@ public class DealCards extends GroupOfCards {
    
         public ArrayList<Card> dealHand()
         {
+            
             int randS = 0 + (int)(Math.random()*((3 - 0) + 1 ));
             int randV = 0 + (int)(Math.random()*((12 - 0) + 1 ));
             //Card[] cardHand = new Card[size];
@@ -31,7 +32,7 @@ public class DealCards extends GroupOfCards {
             for(int i = 0;i < size;i++){
                 randS = 0 + (int)(Math.random()*((3 - 0) + 1 ));
                 randV = 0 + (int)(Math.random()*((12 - 0) + 1 ));
-                 System.out.println(randV + " "+ randS);
+                 //System.out.println(randV + " "+ randS);
                 //cardHand[i] = new Card(randS,randV);
                 cards.add(new Card(randS,randV));
                 
@@ -43,11 +44,12 @@ public class DealCards extends GroupOfCards {
                // System.out.println(cardHand[i].getSuit());
                //  System.out.println(cardHand[i].getValue());
                  //System.out.println(cards.get(i));
-                System.out.println(cards.get(i).getSuit());
-                 cards.get(i).getValue();
+                System.out.println(cards.get(i).getValue() + " of " +cards.get(i).getSuit());
+                
+                
             }
            // cardHand[1].getSuit();
-            
+            System.out.println();
               
            
             
@@ -80,7 +82,7 @@ public class DealCards extends GroupOfCards {
             for(int i  =0; i < cards.size();i++){
                 if(card.equals(cards.get(i).getValue())){
                     
-                   cardTaken = new Card(cards.get(i).getSuit());
+                   cardTaken = new Card(cards.get(i).getValue());
                 }
             
             }

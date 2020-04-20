@@ -13,28 +13,38 @@ public class Main {
         
          int handSize =0;
     
-        int playerSize = game.startGame() - 1; 
+        int playerSize = game.startGame(); 
         if(playerSize > 1 && playerSize < 4){
-            handSize = 6; // dealing with arrays so 6 = 7 elements
+            handSize = 7; // dealing with arrays so 6 = 7 elements
             
         }
         else if(playerSize >= 4 && playerSize <=8){
-             handSize = 4;
+             handSize = 5;
         }
        
-        DealCards cards = new DealCards(handSize);
+        DealCards[] cards = new DealCards[handSize];
         
         ArrayList<DealCards> cardsDealt = new ArrayList<DealCards>();
         
         for(int i = 0; i < playerSize;i++){
-            cardsDealt.add(cards);  // create and array and pass cardsDeault = cards[i].dealHand
+            cards[i] = new DealCards(handSize);
+            cardsDealt.add(cards[i]);  // create and array and pass cardsDeault = cards[i].dealHand
+            
         }
+        ArrayList<Card> cardsDealtAgain = null;
         
         for(int a = 0;a <cardsDealt.size();a++){
-        
-            cardsDealt.get(a).dealHand();
-            System.out.println(cardsDealt.get(a).showCards());
+            
+          // cardsDealtAgain.add(cardsDealt.get(a).dealHand());
+          
+           
+           cardsDealt.get(a).dealHand();
+           
+            //System.out.println(cardsDealt.get(a).showHand());
+            
         }
+        
+        
         
          int randp;
         
@@ -55,9 +65,9 @@ public class Main {
         //System.out.println("This is player 1 hand: " +cardsDealt.get(0).showHand());
         
          
-         cardsDealt.get(0).showHand().forEach(cardsPrinted ->{
-                 System.out.println("This is player 1 hand: " +cardsPrinted);
-                });
+         //cardsDealt.get(0).showHand().forEach(cardsPrinted ->{
+          //       System.out.println("This is player 1 hand: " +cardsPrinted);
+          //      });
         
         while(books < 13){
             System.out.println("Player");

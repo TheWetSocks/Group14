@@ -35,11 +35,11 @@ public class Card
            
         }
         
-        public Card(Suit s)
+        public Card(Value s)
         {
            
-           suit = s;
-           value= null;
+           suit = null;
+           value=s;
            
            
         }
